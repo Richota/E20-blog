@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  load_and_authorize_resource
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -22,9 +23,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # DELETE /resource
+  # # DELETE /resource
   # def destroy
   #   super
+  #   redirect_to root_url
   # end
 
   # GET /resource/cancel
